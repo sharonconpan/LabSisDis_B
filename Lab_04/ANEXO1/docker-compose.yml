@@ -1,0 +1,25 @@
+version: '3.8'
+services:
+  server:
+    build: .
+    volumes:
+      - ./lab2/:/usr/src/app
+    working_dir: /usr/src/app
+    command: sh -c "javac Medicinas/*.java && rmiregistry & sleep 1 && java Medicinas.ServerSide"
+    networks:
+      - rmi
+
+  client:
+    build: .
+    volumes:
+      - ./lab2/:/usr/src/app
+    working_dir: /usr/src/app
+    depends_on:
+      - server
+    command: sh -c "javac Medicinas/*.java && java Medicinas.ClienteSide"
+    networks:
+      - rmi
+
+networks:
+  rmi:
+    driver: bridge
