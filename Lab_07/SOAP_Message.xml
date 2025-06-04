@@ -1,0 +1,13 @@
+<?xml version = "1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV = "" SOAP-ENV:encodingStyle = "">
+  <SOAP-ENV:Header>
+    <t:Transaction xmlns:t = "" SOAP-ENV:mustUnderstand = "true">
+      5
+    </t:Transaction>
+  </SOAP-ENV:Header>
+  <SOAP-ENV:body>
+    <m:GetQuotation xmlns:m = "">
+      <m:Item>Computers</m:Item>
+    </m:GetQuotation>
+  </SOAP-ENV:body>
+</SOAP-ENV:Envelope>
