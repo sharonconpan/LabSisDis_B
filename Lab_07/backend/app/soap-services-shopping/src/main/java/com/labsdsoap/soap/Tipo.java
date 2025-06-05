@@ -1,32 +1,44 @@
 package com.labsdsoap.soap;
 
+import java.util.ArrayList;
+import jakarta.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlElementWrapper;
+import jakarta.xml.bind.annotation.XmlElement;
+
+@XmlRootElement
 public class Tipo{
-  String name;
-  Producto[]storage;
+  private String name;
+  private ArrayList<Producto>storage = new ArrayList<>();
 
   // Setters
-  void setName(String name){
+  public void setName(String name){
     this.name = name;
   }
-  void setStorage(Producto[] storage){
+  public void setStorage(ArrayList<Producto> storage){
     this.storage = storage;
   }
   // Getters
-  String getName(){
+  public String getName(){
     return this.name;
   }
-  Producto[]storage getStorage(){
+  @XmlElementWrapper(name = "productos")
+  @XmlElement(name = "producto")
+  public ArrayList<Producto> getStorage(){
     return this.storage;
   }
   // Functions
-  String giveMeProducto(Int cantidad, String code){
+  public String giveMeProducto(int cantidad, String code){
     Producto product = searchProducto(code);
-    if(0 > product.cantidad-cantidad)
+    if(0 > product.getCantidad()-cantidad)
       return "Producto fuera de stock";
-    producto.setCantidad(producto.getCantidad()-cantidad);
-    return cantidad+" "+producto.getName()+" registrado";
+    product.setCantidad(product.getCantidad()-cantidad);
+    return cantidad+" "+product.getName()+" registrado";
   }
   Producto searchProducto(String code){
     //Falta logica
+    for(Producto p : this.storage)
+      if(p.getCode().equals(code))
+        return p;
+    return null;
   }
 }

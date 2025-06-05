@@ -1,27 +1,32 @@
 package com.labsdsoap.soap;
 
+import jakarta.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlType;
+
+@XmlRootElement
+@XmlType(propOrder = {"code", "name", "cantidad"})
 public class Producto{
-  String name;
-  Int cantidad;
-  String code;
+  private String name;
+  private int cantidad;
+  private String code;
   // Setters of class features
-  void setName(String name){
+  public void setName(String name){
     this.name = name;
   }
-  void setCantidad(int cantidad){
+  public void setCantidad(int cantidad){
     this.cantidad = cantidad;
   }
-  void setCode(String code){
+  public void setCode(String code){
     this.code = code;
   }
   // Getters of class features
-  String getName(){
+  public String getName(){
     return this.name;
   }
-  Int getCantidad(){
+  public int getCantidad(){
     return this.cantidad;
   }
-  String getCode(){
-    return this.code
+  public String getCode(){
+    return this.code;
   }
 }
