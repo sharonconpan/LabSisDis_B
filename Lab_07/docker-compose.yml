@@ -5,7 +5,7 @@ services:
     volumes:
       - ./backend/app/.:/usr/src/app
     ports:
-      - 80:8080
+      - 8080:8080
     working_dir: /usr/src/app/soap-services-shopping
     command: sh -c "mvn clean install && mvn exec:java"
     # command: sh -c "mvn package"
@@ -14,6 +14,6 @@ services:
     volumes:
       - ./frontend/app/.:/usr/src/app
     ports:
-      - 80:5173
+      - 3000:5173
     working_dir: /usr/src/app/vue-app-shopping
     command: sh -c "npm run dev"
