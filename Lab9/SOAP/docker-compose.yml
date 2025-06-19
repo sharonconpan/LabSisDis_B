@@ -1,0 +1,30 @@
+version: '3.8'
+services:
+  backend:
+    build: ./BACK/.
+    working_dir: /usr/src/app/storeJava
+    volumes:
+      - ./BACK/app/.:/usr/src/app
+    ports:
+      - 8080:8080
+    depends_on:
+      - database
+    command: sh -c "mvn clean package && mvn exec:java"
+    
+  frontend:
+    build: ./FRONT/.
+    working_dir: /usr/src/app/vue-application
+    volumes:
+      - ./FRONT/app/.:/usr/src/app
+    ports:
+      - 80:5173
+    command: sh -c "npm install && npm run dev -- --host 0.0.0.0"
+
+  database:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: EmpresaDB
+    volumes:
+      - ./DATABASE/database.sql:/docker-entrypoint-initdb.d/empresa.sql

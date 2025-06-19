@@ -1,0 +1,81 @@
+🧱 Frontend puro (HTML/CSS/JS)
+ HTML básico y etiquetas estructurales
+
+ CSS para estilos (flexbox, grid, etc.)
+
+ JavaScript básico: variables, funciones, condicionales, bucles
+
+ DOM Manipulation
+
+ Eventos (addEventListener)
+
+ fetch() para hacer peticiones HTTP
+
+ Manejo de errores con try/catch y .catch()
+
+ Manejo de XML en JS (DOMParser, XMLSerializer)
+
+ Procesamiento de respuestas SOAP en XML
+
+ Inserción de datos dinámicos al DOM desde XML
+
+🌐 Consumo de APIs desde JS
+ fetch() con GET y POST
+
+ Cabeceras HTTP (Content-Type, SOAPAction, etc.)
+
+ Diferencias entre application/json y text/xml
+
+ Cómo funciona CORS (Cross-Origin Resource Sharing)
+
+ Qué es un preflight request (OPTIONS) y cuándo ocurre
+
+ Cómo evitar problemas de CORS (uso de proxies)
+
+🧩 SOAP y Web Services
+ Estructura de una petición SOAP (Envelope, Header, Body)
+
+ Estructura de la respuesta SOAP
+
+ Definición y propósito de WSDL
+
+ Uso de SOAPAction en headers
+
+ Cómo construir dinámicamente peticiones SOAP en JS
+
+ Leer y entender un XML SOAP desde JS
+
+🖥️ Backend con Java SOAP
+ Uso de jakarta.xml.ws.Endpoint para publicar servicios
+
+ Creación de servicios con anotaciones @WebService y @WebMethod
+
+ Parámetros con @WebParam
+
+ Manejo de excepciones en servicios SOAP
+
+ Configurar correctamente un entorno multiserver (Docker, Jetty, etc.)
+
+ Exponer el WSDL correctamente para uso externo
+
+🔄 Integración Frontend–Backend (Fullstack)
+ Qué es un proxy inverso y por qué lo necesitas
+
+ Cómo hacer un proxy con PHP, Node.js, o NGINX
+
+ Cómo comunicar tu frontend con tu backend sin errores CORS
+
+ Cómo simular una llamada SOAP desde local sin servidor externo (usando file://, lo que ya hiciste)
+
+ Cómo preparar una app para producción (minificación, seguridad, redireccionamientos, etc.)
+
+🧪 Extra (para más adelante, opcional pero recomendable)
+ AJAX clásico (con XMLHttpRequest) por si necesitas compatibilidad
+
+ Conexión a base de datos desde Java (JDBC)
+
+ Debug de red en navegador (pestaña Network)
+
+ Seguridad básica en peticiones HTTP (tokens, auth, etc.)
+
+ Migrar SOAP a REST (si algún día lo necesitas)
